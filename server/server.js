@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import { db } from "./dbConnection.js";
 import path from "path";
+import { fileURLToPath } from "url";
 
 const app = express();
 app.use(express.json());
