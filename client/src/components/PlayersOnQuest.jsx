@@ -20,13 +20,18 @@ export default function PlayersOnQuest() {
   return (
     <>
       <h1>Players on quest</h1>
-      {playerQuests.map((player, i) => {
-        return (
-          <Link key={i} to={`/players/${player.playerID}`}>
-            <p>{player.adventurer}</p>
-          </Link>
-        );
-      })}
+
+      {playerQuests.length > 0 ? (
+        playerQuests.map((player, i) => {
+          return (
+            <Link key={i} to={`/players/${player.playerID}`}>
+              <p>{player.adventurer}</p>
+            </Link>
+          );
+        })
+      ) : (
+        <p>No players are on this quests</p>
+      )}
     </>
   );
 }
