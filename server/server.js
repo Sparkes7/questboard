@@ -8,13 +8,14 @@ app.use(express.json());
 app.use(cors());
 
 const PORT = 8080;
+const __dirname = path.dirname(__filename);
 
 app.listen(PORT, () => {
   console.log(`Server running on ${PORT}`);
 });
 
 // =================================== CATCH ALL
-app.get("*", (req, res) => {
+app.get("/:path(*)", (req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 // ===================================
