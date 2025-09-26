@@ -8,6 +8,7 @@ app.use(express.json());
 app.use(cors());
 
 const PORT = 8080;
+const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 app.listen(PORT, () => {
