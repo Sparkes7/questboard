@@ -12,6 +12,12 @@ app.listen(PORT, () => {
   console.log(`Server running on ${PORT}`);
 });
 
+// =================================== CATCH ALL
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
+// ===================================
+
 app.get("/", function (request, response) {
   response.json({ message: "This is the root server endpoint!" });
 });
