@@ -1,0 +1,62 @@
+import { useState } from "react";
+
+export default function AddPlayerForm() {
+  const [formData, setFormData] = useState({
+    name: "",
+    level: null,
+    race: "",
+    class: "",
+  });
+
+  function handleChange(event) {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value,
+    });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    e.target.reset();
+    console.log(formData);
+
+    try {
+      fetch("http://localhost:8080/add-player", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ formData }),
+      });
+    } catch (error) {
+      console.error("failed posting new quest", error);
+    }
+  }
+  return (
+    <>
+      <h1>Add Player</h1>
+      <form onSubmit={handleSubmit}>
+        <fieldset>
+          <legend>Add New Player</legend>
+          <div>
+            <label htmlFor="name">Name: </label>
+            <input name="name" onChange={handleChange} type="text" />
+          </div>
+          <div>
+            <label htmlFor="level">Level: </label>
+            <input name="level" onChange={handleChange} type="number" />
+          </div>
+          <div>
+            <label htmlFor="race">Race: </label>
+            <input name="race" onChange={handleChange} type="text" />
+          </div>
+          <div>
+            <label htmlFor="class">Class: </label>
+            <input name="class" onChange={handleChange} type="text" />
+          </div>
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+    </>
+  );
+}
