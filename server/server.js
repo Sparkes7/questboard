@@ -1,26 +1,16 @@
 import express from "express";
 import cors from "cors";
 import { db } from "./dbConnection.js";
-import path from "path";
-import { fileURLToPath } from "url";
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 
 const PORT = 8080;
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 app.listen(PORT, () => {
   console.log(`Server running on ${PORT}`);
 });
-
-// =================================== CATCH ALL
-app.get("/:path*", (req, res) => {
-  res.sendFile(path.join(__dirname, "dist", "index.html"));
-});
-// ===================================
 
 app.get("/", function (request, response) {
   response.json({ message: "This is the root server endpoint!" });
