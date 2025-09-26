@@ -20,7 +20,7 @@ export default function AddQuestForm() {
     e.target.reset();
     console.log(formData);
     try {
-      fetch("http://localhost:8080/add-quest", {
+      fetch(`${import.meta.env.VITE_SERVER_BASE}/add-quest`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

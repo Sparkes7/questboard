@@ -8,7 +8,7 @@ export default function PlayersOnQuest() {
   useEffect(() => {
     async function getPlayersOnQuest() {
       const response = await fetch(
-        `http://localhost:8080/quests/${questid}/players`
+        `${import.meta.env.VITE_SERVER_BASE}/quests/${questid}/players`
       );
       const data = await response.json();
       setPlayerQuests(data);

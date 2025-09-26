@@ -8,7 +8,9 @@ export default function PlayerList() {
 
   useEffect(() => {
     async function getPlayers() {
-      const response = await fetch("http://localhost:8080/players");
+      const response = await fetch(
+        `${import.meta.env.VITE_SERVER_BASE}/players`
+      );
       const data = await response.json();
       setPlayers(data);
     }

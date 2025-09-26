@@ -7,7 +7,7 @@ export default function QuestsPlayerHas() {
   useEffect(() => {
     async function getQuestsPlayerHas() {
       const response = await fetch(
-        `http://localhost:8080/players/${playerid}/quests`
+        `${import.meta.env.VITE_SERVER_BASE}/players/${playerid}/quests`
       );
       const data = await response.json();
       setQuestsPlayerHas(data);
@@ -23,7 +23,7 @@ export default function QuestsPlayerHas() {
   console.log(questsPlayerHas);
 
   function CompleteQuest(questid) {
-    fetch("http://localhost:8080/completequest", {
+    fetch(`${import.meta.env.VITE_SERVER_BASE}/completequest`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -39,7 +39,7 @@ export default function QuestsPlayerHas() {
       {questsPlayerHas.length > 0 ? (
         questsPlayerHas.map((quest, i) => {
           return (
-            <div>
+            <div key={i}>
               <Link key={i} to={`/quests/${quest.questid}`}>
                 {quest.questName}
               </Link>

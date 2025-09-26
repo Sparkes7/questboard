@@ -8,7 +8,9 @@ export default function QuestProfile() {
 
   useEffect(() => {
     async function getQuest() {
-      const response = await fetch(`http://localhost:8080/quests/${questid}`);
+      const response = await fetch(
+        `${import.meta.env.VITE_SERVER_BASE}/quests/${questid}`
+      );
       const data = await response.json();
       //console.log(data);
       setQuest(data[0]);

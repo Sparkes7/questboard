@@ -7,7 +7,9 @@ export default function QuestList() {
 
   useEffect(() => {
     async function getQuests() {
-      const response = await fetch("http://localhost:8080/quests");
+      const response = await fetch(
+        `${import.meta.env.VITE_SERVER_BASE}/quests`
+      );
       const data = await response.json();
       setQuests(data);
     }

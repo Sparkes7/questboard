@@ -21,7 +21,7 @@ export default function AddPlayerForm() {
     console.log(formData);
 
     try {
-      fetch("http://localhost:8080/add-player", {
+      fetch(`${import.meta.env.VITE_SERVER_BASE}/add-player`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

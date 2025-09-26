@@ -8,7 +8,9 @@ export default function AvailableQuests() {
   useEffect(() => {
     async function getAvailableQuests() {
       const response = await fetch(
-        `http://localhost:8080/players/${playerid}/availablequests`
+        `${
+          import.meta.env.VITE_SERVER_BASE
+        }/players/${playerid}/availablequests`
       );
       const data = await response.json();
       setAvailableQuests(data);
@@ -27,7 +29,7 @@ export default function AvailableQuests() {
     console.log(questid, playerid);
     console.log(questid);
     try {
-      fetch("http://localhost:8080/acceptquest", {
+      fetch(`${import.meta.env.VITE_SERVER_BASE}/acceptquest`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -42,9 +44,9 @@ export default function AvailableQuests() {
   return (
     <>
       <h1>Available Quests</h1>
-      {availableQuests.map((quest) => {
+      {availableQuests.map((quest, i) => {
         return (
-          <div>
+          <div key={i}>
             <Link to={`/quests/${quest.id}`}>{quest.name}</Link>
             <button
               id="btn"
