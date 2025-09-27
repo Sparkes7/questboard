@@ -43,13 +43,15 @@ export default function AvailableQuests() {
 
   return (
     <>
-      <h1>Available Quests</h1>
+      <h3>Available Quests</h3>
       {availableQuests.map((quest, i) => {
         return (
-          <div key={i}>
-            <Link to={`/quests/${quest.id}`}>{quest.name}</Link>
+          <div key={i} className="outlet-item">
+            <Link to={`/quests/${quest.id}`} className="outlet-a">
+              {quest.name}
+            </Link>
             <button
-              id="btn"
+              className="quest-btn"
               onClick={(e) => {
                 e.target.disabled = true;
                 AcceptQuest(quest.id);

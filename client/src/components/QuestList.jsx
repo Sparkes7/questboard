@@ -22,7 +22,7 @@ export default function QuestList() {
     return () => clearInterval(interval);
   }, []);
 
-  console.log(quests);
+  //console.log(quests);
 
   return (
     <>

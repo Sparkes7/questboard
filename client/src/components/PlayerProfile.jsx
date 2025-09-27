@@ -18,25 +18,35 @@ export default function PlayerProfile() {
     getPlayer();
   }, [playerid]);
 
-  console.log(player);
+  //console.log(player);
 
   return (
-    <>
-      <h1>Player Profile:</h1>
-      <p>{player.name}</p>
-      <p>{player.level}</p>
-      <p>{player.class}</p>
-      <p>{player.race}</p>
-      <Link to={`/players/${playerid}/quests`} element={<QuestsPlayerHas />}>
-        Quests this player has
-      </Link>
-      <Link
-        to={`/players/${playerid}/availablequests`}
-        element={<AvailableQuests />}
-      >
-        Available Quests
-      </Link>
+    <section>
+      <h2>Player Profile:</h2>
+      <p>
+        {player.name}, Level {player.level}
+      </p>
+      <p></p>
+      <p>
+        {player.race} {player.class}
+      </p>
+      <div className="outlet-links">
+        <Link
+          to={`/players/${playerid}/quests`}
+          element={<QuestsPlayerHas character={player} />}
+          className="list-item"
+        >
+          Character Questlog
+        </Link>
+        <Link
+          to={`/players/${playerid}/availablequests`}
+          element={<AvailableQuests />}
+          className="list-item"
+        >
+          Available Quests
+        </Link>
+      </div>
       <Outlet />
-    </>
+    </section>
   );
 }

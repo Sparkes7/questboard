@@ -17,7 +17,7 @@ export default function PlayerList() {
     getPlayers();
 
     const interval = setInterval(() => {
-      console.log("interval");
+      // console.log("interval");
       getPlayers();
     }, 1000);
     return () => clearInterval(interval);

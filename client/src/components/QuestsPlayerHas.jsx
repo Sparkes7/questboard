@@ -20,7 +20,7 @@ export default function QuestsPlayerHas() {
     return () => clearInterval(interval);
   }, [playerid]);
 
-  console.log(questsPlayerHas);
+  //console.log(questsPlayerHas);
 
   function CompleteQuest(questid) {
     fetch(`${import.meta.env.VITE_SERVER_BASE}/completequest`, {
@@ -34,30 +34,31 @@ export default function QuestsPlayerHas() {
 
   return (
     <>
-      <h1>Quest Player Has: </h1>
-
+      <h3>Quests Character Has: </h3>
       {questsPlayerHas.length > 0 ? (
         questsPlayerHas.map((quest, i) => {
           return (
             <div key={i}>
-              <Link key={i} to={`/quests/${quest.questid}`}>
-                {quest.questName}
-              </Link>
-              <button
-                onClick={(e) => {
-                  e.target.disabled = true;
-                  CompleteQuest(quest.questid);
-                }}
-              >
-                Complete Quest
-              </button>
+              <div className="outlet-item">
+                <Link to={`/quests/${quest.questid}`} className="outlet-a">
+                  {quest.questName}
+                </Link>
+                <button
+                  className="quest-btn"
+                  onClick={(e) => {
+                    e.target.disabled = true;
+                    CompleteQuest(quest.questid);
+                  }}
+                >
+                  Complete Quest
+                </button>
+              </div>
             </div>
           );
         })
       ) : (
         <p>This player is not currently on any quests</p>
       )}
-      {}
     </>
   );
 }

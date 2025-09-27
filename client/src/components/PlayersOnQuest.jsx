@@ -15,22 +15,27 @@ export default function PlayersOnQuest() {
     }
     getPlayersOnQuest();
   }, [questid]);
-  console.log(playerQuests);
+  //console.log(playerQuests);
 
   return (
     <>
-      <h1>Players on quest</h1>
-
+      <h3>All characters listed are currently on this quest</h3>
       {playerQuests.length > 0 ? (
         playerQuests.map((player, i) => {
           return (
-            <Link key={i} to={`/players/${player.playerID}`}>
-              <p>{player.adventurer}</p>
-            </Link>
+            <div className="outlet-item" key={i}>
+              <Link
+                key={i}
+                to={`/players/${player.playerID}`}
+                className="outlet-a"
+              >
+                {player.adventurer}
+              </Link>
+            </div>
           );
         })
       ) : (
-        <p>No players are on this quests</p>
+        <p>No characters are on this quests</p>
       )}
     </>
   );

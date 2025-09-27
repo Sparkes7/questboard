@@ -1,14 +1,12 @@
 export default function Home() {
   return (
-    <>
+    <section id="home">
+      <h2>Welcome to the QuestBoard.</h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo eius alias
-        officia similique autem perspiciatis quasi qui. Cupiditate mollitia
-        aperiam, voluptatibus iure aliquam, inventore rem sit veniam maiores
-        dolores quidem fuga beatae impedit, id eius. Perferendis, natus aliquam?
-        Natus harum velit saepe, unde in asperiores laboriosam praesentium
-        accusamus hic illum?
+        This website is a dashboard to add and view characters within your game,
+        and manage the quests that they are on!
       </p>
-    </>
+      <p></p>
+    </section>
   );
 }

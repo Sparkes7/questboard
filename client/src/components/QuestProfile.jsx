@@ -24,9 +24,15 @@ export default function QuestProfile() {
       <p>{quest.task}</p>
       <p>Experience Reward: {quest.exp}</p>
       <p>Item Reward: {quest.reward}</p>
-      <Link to={`/quests/${questid}/players`} element={<PlayersOnQuest />}>
-        Players on this quest
-      </Link>
+      <div className="list-container">
+        <Link
+          to={`/quests/${questid}/players`}
+          element={<PlayersOnQuest />}
+          className="list-item"
+        >
+          Players on Quest
+        </Link>
+      </div>
       <Outlet />
     </>
   );
