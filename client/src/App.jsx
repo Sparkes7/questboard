@@ -1,3 +1,6 @@
+import "./App.css";
+import Home from "./components/Home";
+import NavBar from "./components/NavBar";
 import PlayerList from "./components/PlayerList";
 import PlayerProfile from "./components/PlayerProfile";
 import QuestList from "./components/QuestList";
@@ -11,11 +14,12 @@ import AvailableQuests from "./components/AvailableQuests";
 export default function App() {
   return (
     <>
-      <h1>QuestBoard</h1>
-      <Link to="/players">Players</Link>
-      <Link to="/quests">Quests</Link>
-
+      <Link to="/" className="branding">
+        Quest Board
+      </Link>
+      <NavBar />
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/players" element={<PlayerList />} />
         <Route path="/players/:playerid" element={<PlayerProfile />}>
           <Route path="quests" element={<QuestsPlayerHas />} />
