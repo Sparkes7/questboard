@@ -35,22 +35,28 @@ export default function AddQuestForm() {
   return (
     <>
       <h1>Add Quest</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="form">
         <fieldset>
           <legend>Add New Quest</legend>
-          <div>
+          <div className="form-group">
             <label htmlFor="name">Name: </label>
             <input name="name" onChange={handleChange} type="text" />
           </div>
-          <div>
+          <div className="form-group">
             <label htmlFor="task">Task: </label>
-            <input name="task" onChange={handleChange} type="text" />
+            <textarea
+              name="task"
+              onChange={handleChange}
+              type="text"
+              cols={50}
+              rows={4}
+            />
           </div>
-          <div>
+          <div className="form-group">
             <label htmlFor="exp">Experience on Completion: </label>
             <input name="exp" onChange={handleChange} type="number" />
           </div>
-          <div>
+          <div className="form-group">
             <label htmlFor="reward">Item Reward: </label>
             <input name="reward" onChange={handleChange} type="text" />
           </div>
