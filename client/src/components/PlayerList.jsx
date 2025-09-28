@@ -26,19 +26,21 @@ export default function PlayerList() {
   return (
     <>
       <AddPlayerForm />
-      <h1>All Players:</h1>
-      <div className="list-container">
-        {players.map((player) => (
-          // <Player key={player.id} player={player} onClick={handleClick} />
-          <Link
-            key={player.id}
-            to={`/players/${player.id}`}
-            className="list-item"
-          >
-            {player.name}
-          </Link>
-        ))}
-      </div>
+      <section>
+        <h1>All Players:</h1>
+        <div className="list-container">
+          {players.map((player) => (
+            // <Player key={player.id} player={player} onClick={handleClick} />
+            <Link
+              key={player.id}
+              to={`/players/${player.id}`}
+              className="list-item"
+            >
+              {player.name}
+            </Link>
+          ))}
+        </div>
+      </section>
     </>
   );
 }

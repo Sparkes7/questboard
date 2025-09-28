@@ -33,7 +33,7 @@ export default function AddPlayerForm() {
     }
   }
   return (
-    <>
+    <section>
       <h1>Add Player</h1>
       <form onSubmit={handleSubmit} className="form">
         <fieldset>
@@ -57,6 +57,6 @@ export default function AddPlayerForm() {
           <button type="submit">Submit</button>
         </fieldset>
       </form>
-    </>
+    </section>
   );
 }

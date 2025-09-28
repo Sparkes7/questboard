@@ -27,14 +27,20 @@ export default function QuestList() {
   return (
     <>
       <AddQuestForm />
-      <h1>All Quests:</h1>
-      <div className="list-container">
-        {quests.map((quest) => (
-          <Link key={quest.id} to={"/quests/" + quest.id} className="list-item">
-            {quest.name}
-          </Link>
-        ))}
-      </div>
+      <section>
+        <h1>All Quests:</h1>
+        <div className="list-container">
+          {quests.map((quest) => (
+            <Link
+              key={quest.id}
+              to={"/quests/" + quest.id}
+              className="list-item"
+            >
+              {quest.name}
+            </Link>
+          ))}
+        </div>
+      </section>
     </>
   );
 }

@@ -33,7 +33,7 @@ export default function AddQuestForm() {
   }
 
   return (
-    <>
+    <section>
       <h1>Add Quest</h1>
       <form onSubmit={handleSubmit} className="form">
         <fieldset>
@@ -63,6 +63,6 @@ export default function AddQuestForm() {
           <button type="submit">Submit</button>
         </fieldset>
       </form>
-    </>
+    </section>
   );
 }
