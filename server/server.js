@@ -133,3 +133,19 @@ app.put("/completequest", (request, response) => {
     response.status(500).json({ success: false });
   }
 });
+
+app.delete("/deleteplayer/:playerid", (request, response) => {
+  console.log(`deleted player ${request.params.playerid}`);
+  db.query(`DELETE FROM player_quests WHERE player_id = $1`, [
+    request.params.playerid,
+  ]);
+  db.query(`DELETE FROM players WHERE id = $1;`, [request.params.playerid]);
+});
+
+app.delete("/deletequest/:questid", (request, response) => {
+  console.log(`deleted quest ${request.params.questid}`);
+  db.query(`DELETE FROM player_quests WHERE quest_id = $1`, [
+    request.params.questid,
+  ]);
+  db.query(`DELETE FROM quests WHERE id = $1;`, [request.params.questid]);
+});

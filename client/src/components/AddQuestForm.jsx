@@ -47,7 +47,7 @@ export default function AddQuestForm() {
             <input name="task" onChange={handleChange} type="text" />
           </div>
           <div>
-            <label htmlFor="exp">Award Experience Points: </label>
+            <label htmlFor="exp">Experience on Completion: </label>
             <input name="exp" onChange={handleChange} type="number" />
           </div>
           <div>

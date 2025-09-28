@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link, Outlet } from "react-router";
 import PlayersOnQuest from "./PlayersOnQuest";
+import DeleteQuest from "./DeleteQuest";
 
 export default function QuestProfile() {
   const [quest, setQuest] = useState({});
@@ -24,13 +25,19 @@ export default function QuestProfile() {
       <p>{quest.task}</p>
       <p>Experience Reward: {quest.exp}</p>
       <p>Item Reward: {quest.reward}</p>
-      <div className="list-container">
+      <div className="outlet-links">
         <Link
           to={`/quests/${questid}/players`}
           element={<PlayersOnQuest />}
           className="list-item"
         >
           Players on Quest
+        </Link>
+        <Link
+          to={`/quests/${questid}/deletequest`}
+          className="delete-character-link"
+        >
+          Delete Quest
         </Link>
       </div>
       <Outlet />

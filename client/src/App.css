@@ -81,12 +81,9 @@ body {
 
 .outlet-links {
   display: flex;
+  align-items: center;
   color: white;
   gap: 1rem;
-}
-
-.outlet-links a {
-  color: white;
 }
 
 .outlet-item {
@@ -122,4 +119,28 @@ body {
 
 .quest-btn:hover {
   background-color: var(--col-listbtn-hover);
+}
+
+.delete-character-link {
+  color: rgb(131, 131, 131);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: var(--font-s);
+}
+
+.delete-btn {
+  background-color: var(--col-listbtn);
+  padding: 0.5rem 0.8rem;
+  color: white;
+  text-transform: uppercase;
+  border: 1px solid white;
+}
+.delete-btn:hover {
+  background-color: var(--col-listbtn-hover);
+}
+.delete-btn:disabled {
+  background-color: rgb(43, 43, 43);
+}
+.warning {
+  color: red;
 }

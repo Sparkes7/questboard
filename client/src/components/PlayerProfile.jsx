@@ -45,6 +45,12 @@ export default function PlayerProfile() {
         >
           Available Quests
         </Link>
+        <Link
+          to={`/players/${playerid}/deletecharacter`}
+          className="delete-character-link"
+        >
+          Delete Character
+        </Link>
       </div>
       <Outlet />
     </section>

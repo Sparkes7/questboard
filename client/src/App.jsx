@@ -7,9 +7,11 @@ import QuestList from "./components/QuestList";
 import QuestProfile from "./components/QuestProfile";
 import PlayersOnQuest from "./components/PlayersOnQuest";
 import QuestsPlayerHas from "./components/QuestsPlayerHas";
+import DeleteCharacter from "./components/DeleteCharacter";
+import AvailableQuests from "./components/AvailableQuests";
+import DeleteQuest from "./components/DeleteQuest";
 
 import { Routes, Route, Link } from "react-router";
-import AvailableQuests from "./components/AvailableQuests";
 
 export default function App() {
   return (
@@ -24,11 +26,13 @@ export default function App() {
         <Route path="/players/:playerid" element={<PlayerProfile />}>
           <Route path="quests" element={<QuestsPlayerHas />} />
           <Route path="availablequests" element={<AvailableQuests />} />
+          <Route path="deletecharacter" element={<DeleteCharacter />} />
         </Route>
 
         <Route path="/quests" element={<QuestList />} />
         <Route path="/quests/:questid" element={<QuestProfile />}>
           <Route path="players" element={<PlayersOnQuest />} />
+          <Route path="deletequest" element={<DeleteQuest />} />
         </Route>
       </Routes>
     </>
