@@ -36,9 +36,12 @@ body {
 }
 
 .branding {
-  color: rgb(255, 255, 255);
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   font-size: var(--font-xl);
+}
+.branding:hover {
+  color: white;
 }
 
 .nav-bar {

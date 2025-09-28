@@ -34,7 +34,7 @@ export default function AddQuestForm() {
 
   return (
     <section>
-      <h1>Add Quest</h1>
+      <h2>Add Quest</h2>
       <form onSubmit={handleSubmit} className="form">
         <fieldset>
           <legend>Add New Quest</legend>

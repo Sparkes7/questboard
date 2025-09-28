@@ -17,7 +17,7 @@ export default function App() {
   return (
     <>
       <Link to="/" className="branding">
-        Quest Board
+        <h1>Quest Board</h1>
       </Link>
       <NavBar />
       <Routes>

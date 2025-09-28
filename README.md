@@ -87,3 +87,15 @@ I was able to implement all of the goals in a way that fit my project however du
 The biggest 'win' I can take away from this assignment is that I feel like I have a much better grasp at using params for dynamic routing and have been able to practice creating SQL queries in a more meaningful way that allows greater interaction between the data that I have.
 
 The biggest challenge was discovering how I can query my database tables in a way that I wanted to. After many hours of searching around, I'm happy with the results that I have.
+
+## What I didn't manage to do
+
+I was rather busy this weekend and therefore I didn't have as much time as I wanted to for styling specifically. The forms have some basic flex properties to stack the labels ontop of the inputs, but would like to have played with the styling more in general.
+
+With regards to the styling of the rest of the website. I think there's need of some margins and padding in various places as well. Ideally I'd also have more styling on the 'Quest Profile' and 'Player Profile' pages as right now they just pull the information and display it.
+
+## Expandability
+
+I have ideas as to where this could be developed in the future. When a player is created, it could be defaulted to level 1 and when a quest is completed it adds the experience amount to the players experience. This would allow the experience to be tracked for each player and therefore have queries that filter out the quests you don't have enough experience for.
+
+There could also be a more thought-out form for creating quests, where quests have more flavour text, specific objectives and ways to better view what the rewards would be for the completion of the quest. Hypothetically there could be a table of quest reward items that the quest points towards, and each item has its own data such as what type of item it is, and some stats of that item.

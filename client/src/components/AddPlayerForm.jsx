@@ -34,7 +34,7 @@ export default function AddPlayerForm() {
   }
   return (
     <section>
-      <h1>Add Player</h1>
+      <h2>Add Player</h2>
       <form onSubmit={handleSubmit} className="form">
         <fieldset>
           <legend>Add New Player</legend>
