@@ -6,7 +6,7 @@ export default function DeleteQuest() {
   const [deleteText, setDeleteText] = useState("Confirm Delete");
 
   function Delete() {
-    fetch(`http://localhost:8080/deletequest/${questid}`, {
+    fetch(`${import.meta.env.VITE_SERVER_BASE}/deletequest/${questid}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

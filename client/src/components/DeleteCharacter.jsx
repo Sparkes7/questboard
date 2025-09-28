@@ -6,7 +6,7 @@ export default function DeleteCharacter() {
   const [deleteText, setDeleteText] = useState("Confirm Delete");
 
   function Delete() {
-    fetch(`http://localhost:8080/deleteplayer/${playerid}`, {
+    fetch(`${import.meta.env.VITE_SERVER_BASE}/deleteplayer/${playerid}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

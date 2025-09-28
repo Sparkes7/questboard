@@ -33,7 +33,7 @@ export default function PlayerProfile() {
       <div className="outlet-links">
         <Link
           to={`/players/${playerid}/quests`}
-          element={<QuestsPlayerHas character={player} />}
+          element={<QuestsPlayerHas />}
           className="list-item"
         >
           Character Questlog

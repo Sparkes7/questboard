@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Link, Outlet } from "react-router";
 import PlayersOnQuest from "./PlayersOnQuest";
-import DeleteQuest from "./DeleteQuest";
 
 export default function QuestProfile() {
   const [quest, setQuest] = useState({});
