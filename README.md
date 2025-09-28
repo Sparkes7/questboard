@@ -53,8 +53,10 @@
 
 - Character and Quest pages use dynamic pages to fetch data based on their respective IDs These same quest and character params are used for most other endpoints for getting, updating and deleting records.
 
-🏹 Use react-router-dom to create a dedicated route for the categories
+🏹✅ Use react-router-dom to create a dedicated route for the categories
 For example, /posts/:categoryName.
+
+- many dynamic endpoints for quest, players, available quests etc.
 
 🏹✅ Allow users to delete posts.
 
