@@ -40,7 +40,7 @@ export default function AddQuestForm() {
           <legend>Add New Quest</legend>
           <div className="form-group">
             <label htmlFor="name">Name: </label>
-            <input name="name" onChange={handleChange} type="text" />
+            <input name="name" onChange={handleChange} type="text" required />
           </div>
           <div className="form-group">
             <label htmlFor="task">Task: </label>
@@ -50,15 +50,16 @@ export default function AddQuestForm() {
               type="text"
               cols={50}
               rows={4}
+              required
             />
           </div>
           <div className="form-group">
             <label htmlFor="exp">Experience on Completion: </label>
-            <input name="exp" onChange={handleChange} type="number" />
+            <input name="exp" onChange={handleChange} type="number" required />
           </div>
           <div className="form-group">
             <label htmlFor="reward">Item Reward: </label>
-            <input name="reward" onChange={handleChange} type="text" />
+            <input name="reward" onChange={handleChange} type="text" required />
           </div>
           <button type="submit">Submit</button>
         </fieldset>

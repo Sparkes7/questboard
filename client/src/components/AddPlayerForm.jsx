@@ -40,19 +40,24 @@ export default function AddPlayerForm() {
           <legend>Add New Player</legend>
           <div className="form-group">
             <label htmlFor="name">Name: </label>
-            <input name="name" onChange={handleChange} type="text" />
+            <input name="name" onChange={handleChange} type="text" required />
           </div>
           <div className="form-group">
             <label htmlFor="level">Level: </label>
-            <input name="level" onChange={handleChange} type="number" />
+            <input
+              name="level"
+              onChange={handleChange}
+              type="number"
+              required
+            />
           </div>
           <div className="form-group">
             <label htmlFor="race">Race: </label>
-            <input name="race" onChange={handleChange} type="text" />
+            <input name="race" onChange={handleChange} type="text" required />
           </div>
           <div className="form-group">
             <label htmlFor="class">Class: </label>
-            <input name="class" onChange={handleChange} type="text" />
+            <input name="class" onChange={handleChange} type="text" required />
           </div>
           <button type="submit">Submit</button>
         </fieldset>
